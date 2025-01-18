@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: black; /* Tablo arka planını siyah yapıyoruz */
+      }
+      table, th, td {
+        border: 1px solid #ddd;
+      }
+      th, td {
+        padding: 12px;
+        text-align: center;
+        color: white; /* Yazı rengini beyaz yapıyoruz */
+      }
+      th {
+        background-color: #333; /* Başlık hücrelerinin arka planı koyu gri */
+      }
+      tr:nth-child(even) {
+        background-color: #444; /* Çift satırlar için koyu gri */
+      }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +31,8 @@
     <link rel="stylesheet" href="media/style.css">
     <link href="https://fonts.bunny.net/css?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
+  </head>
+  <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <nav class="desktop_navbar">
       <a href="#"><img class="desktop_navbar_logo_img" src="media/logo.png" alt="logo"></a>
@@ -18,35 +40,13 @@
       <a href="#discord" class="desktop_navbar_link scroll">İletişim</a>
       <a href="#about" class="desktop_navbar_link scroll">Market</a>
       <div class="desktop_navbar_link2_div">
-          <a href="#join" class="desktop_navbar_link2 scroll">Kayıt Ol</a>
+        <a href="#join" class="desktop_navbar_link2 scroll">Kayıt Ol</a>
       </div>
     </nav>
-    <div class="mobile_navbar">
-      <a href="/index.html" class="mobile_navbar_logo_img_a"><img class="mobile_navbar_logo_img" src="media/da" alt="logo"></a>
-      <div id="mobile_navbar_links">
-          <a class="mobile_navbar_link" onclick="mobile_navbar_link_hider()" href="https://wiki.example.com/">Ana Sayfa</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="iletisim.html">İletişim</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="market.html">Market</a>
-          <a class="mobile_navbar_link scroll" onclick="mobile_navbar_link_hider()" href="#join">Kayıt Ol</a>
-        </div>
-        <div class="icon" onclick="mobile_navbar_link_hider()">
-            <i class="fa fa-bars"></i>
-        </div>
-        <script>
-            function mobile_navbar_link_hider() {
-            var x = document.getElementById("mobile_navbar_links");
-            if (x.style.display === "flex") {
-                x.style.display = "none";
-            } else {
-                x.style.display = "flex";
-            }
-            } 
-        </script>
-    </div>
+
     <div class="mainflex">
       <div class="main1" style="background-image: url(media/mchtpmk.jpg);">
-        <a class="main1_logo_a" href="/index.html">
-        </a>
+        <a class="main1_logo_a" href="/index.html"></a>
         <div class="main1_description">
           <a>YakamuzCraft<br>Kaliteli</a>
           <a class="main1_actcent">Hoş Geldiniz!</a><a>.</a>
@@ -59,70 +59,46 @@
           </button>
           <script>
             function copyText() {
-                navigator.clipboard.writeText
-            ("play.example.com");
-                }
+              navigator.clipboard.writeText("play.example.com");
+            }
             $(document).ready(function() {
-            $('.main1_ipcopier').click(function() {
+              $('.main1_ipcopier').click(function() {
                 var popup = $('<div>', { class: 'main1_popup' })
-                .append($('<h3 class="copy_confirm">').text('Kopyalandı. İyi Oyunlar!'))
+                  .append($('<h3 class="copy_confirm">').text('Kopyalandı. İyi Oyunlar!'))
                 $(this).after(popup);
                 setTimeout(function() {
-                popup.remove();
+                  popup.remove();
                 }, 1000);
+              });
             });
-            });
-        </script>
+          </script>
         </div>
         <a href="#more" class="scroll">
           <img alt="downarrow" class="main1_downarrow" src="media/downarrow.png">
         </a>
-        <script>
-          const scrollLinks = document.querySelectorAll('.scroll');
-          scrollLinks.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-              event.preventDefault();
-              const target = document.querySelector(link.getAttribute('href'));
-              const offsetTop = target.offsetTop;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-              });
-            });
-          });
-        </script>
       </div>
-      <div id="more"></div>
-      <div class="main2">
-        <a class="headline">What we have</a>
-        <div class="main2_features_div">
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 1</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 2</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 3</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 4</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-          <div class="main2_feature">
-            <img class="main2_feature_img" alt="Feature Image" src="media/placeholder.png">
-            <a class="main2_feature_headline">Feature 5</a>
-            <a class="main2_feature_text">Feature description</a>
-          </div>
-        </div>
+
+      <!-- Tablo Burada Başlıyor -->
+      <div id="about"></div>
+      <div class="table_section">
+        <h2>İletişim Bilgileri Ve Sosyal Medya Hesaplarımız</h2>
+        <table>
+          <tr>
+            <th>İnstagram</th>
+            <th>Gmail</th>
+            <th>Tiktok</th>
+            <th>Youtube</th>
+          </tr>
+          <tr>
+            <td>yakamuzcraft</td>
+            <td>yakamuzcraft@gmail.com</td>
+            <td>yakamuz.craft</td>
+            <td>yakamuzcraft</td>
+          </tr>
+        </table>
       </div>
+      <!-- Tablo Burada Bitiyor -->
+      
       <div id="discord"></div>
       <div class="main4">
         <a class="headline">Discord'a Katıl!</a>
@@ -137,78 +113,7 @@
           </div>
         </div>
       </div>
-      <div id="about"></div>
-      <div class="main5">
-        <a class="headline">Bizimle Tanışın</a>
-        <div class="main5_admin_div">
-          <div class="main5_admins_div main5_admins_dev_type2">
-            <img class="main5_admins_img" alt="admin member img" src="media/muhammed.jpg.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Kurucu]</a>
-              <a class="main5_admins_description_title" href="https://example.com">Muhammed Yılmaz</a>
-              <a class="main5_admins_description">Ashheraa<br></a>
-            </div>
-          </div>
-          <div class="main5_admins_div main5_admins_dev_type1">
-            <img class="main5_admins_img" alt="admin member img" src="media/musti.jpg.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_admin">[Sunucu Sahibi]</a>
-              <a class="main5_admins_description_title" href="https://example.com">Mustafa Cebecioğlu</a>
-              <a class="main5_admins_description">KaonC<br></a>
-            </div>
-          </div>
-          <div class="main5_admins_div main5_admins_dev_type2">
-            <img class="main5_admins_img" alt="admin member img" src="media/burak.jpeg">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_owner">[Sunucu Sahibi]</a>
-              <a class="main5_admins_description_title" href="https://example.com">Burak Gündoğdu</a>
-              <a class="main5_admins_description">Burak4547<br></a>
-            </div>
-          </div>
-          <div class="main5_admins_div main5_admins_dev_type1">
-            <img class="main5_admins_img" alt="admin member img" src="media/mucahit.jpg.webp">
-            <div class="main5_admins_description_div">
-              <a class="main5_admins_description_rank main5_admins_description_rank_admin">[Sunucu Sahibi]</a>
-              <a class="main5_admins_description_title" href="https://www.instagram.com/mucahitpwk00">Mücahit Pamuk</a>
-              <a class="main5_admins_description ">MrbossTR<br></a>
-            </div>
-          </div>
-        </div>
-        <div class="main5_supporter_div">
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Admin]</a>
-              <a class="main5_supporters_description_title">Musab Cebecioğlu</a>
-              <a class="main5_supporters_description">ateşlimusab<br></a>
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Enes Pamuk</a>
-              <a class="main5_supporters_description">KekoPower<br></a>
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Enes Gündoğdu</a>
-              <a class="main5_supporters_description">Paşahazretleri<br></a>
-            </div>
-          </div>
-          <div class="main5_supporters_div">
-            <img class="main5_supporters_img" alt="supporters member img" src="media/member_placeholder.webp">
-            <div class="main5_supporters_description_div">
-              <a class="main5_supporters_description_rank main5_supporters_description_rank_supporter">[Supporter]</a>
-              <a class="main5_supporters_description_title">Replacable Supporter 4</a>
-              <a class="main5_supporters_description">Supporter<br>Description</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      
       <div id="join"></div>
       <div class="main3">
         <a class="headline">Nasıl Katılabilirim</a>
@@ -226,10 +131,13 @@
               </div>
             </div>
           </div>
-          
         </div>
       </div>
+      
+      
+
     </div>
+
     <footer class="copyright_div">
       <a href="https://github.com/FQQD/MCServer-Web-Template" class="copyright">Made by FQQD 2023 - Edited by [YakamuzCraft@gmail.com] [2025]</a>
     </footer>
